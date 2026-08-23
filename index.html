@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nissan Skyline GT-R R34 - A Lenda JDM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #0a0e17;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Linha Neon de Destaque */
+        .top-line {
+            height: 4px;
+            background: linear-gradient(90deg, #00f2fe, #4facfe, #00c6ff);
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 14, 23, 0.95);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #00f2fe;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+        }
+
+        nav a {
+            color: #a0aec0;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00f2fe;
+        }
+
+        /* Hero / Seção Principal */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            min-height: 85vh;
+            background: radial-gradient(circle at 70% 50%, rgba(0, 242, 254, 0.12) 0%, rgba(10, 14, 23, 1) 70%);
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid #00f2fe;
+            color: #00f2fe;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #a0aec0;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 16px 36px;
+            background: linear-gradient(90deg, #00f2fe, #00c6ff);
+            color: #0a0e17;
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+        }
+
+        .hero-img {
+            width: 45%;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Especificações */
+        .specs {
+            padding: 80px 8%;
+            background-color: #0e1422;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .title span {
+            color: #00f2fe;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .spec-box:hover {
+            border-color: #00f2fe;
+            transform: translateY(-5px);
+            background: rgba(0, 242, 254, 0.05);
+        }
+
+        .number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #00f2fe;
+        }
+
+        .label {
+            font-size: 13px;
+            color: #a0aec0;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Galeria */
+        .gallery {
+            padding: 80px 8%;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 250px;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Formulario */
+        .contact {
+            padding: 80px 8%;
+            background: #0e1422;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-box {
+            background: #0a0e17;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .form-box p {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .field input, .field select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            outline: none;
+        }
+
+        .field input:focus, .field select:focus {
+            border-color: #00f2fe;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #00f2fe, #00c6ff);
+            color: #0a0e17;
+            font-weight: 800;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Adaptativo para Celular */
+        @media (max-width: 850px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text, .hero-img {
+                max-width: 100%;
+                width: 100%;
+            }
+            .hero-img {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-line"></div>
+
+    <header>
+        <div class="logo">SKYLINE <span>GT-R</span></div>
+        <nav>
+            <a href="#specs">Ficha Técnica</a>
+            <a href="#fotos">Fotos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span class="badge">Lenda JDM</span>
+            <h1>Nissan Skyline <br><span>GT-R R34</span></h1>
+            <p>Tradição das pistas, motor RB26DETT Twin-Turbo e tração integral ATTESA E-TS PRO. A experiência definitiva de um esportivo puro.</p>
+            <a href="#contato" class="btn-cta">Tenha o Seu</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Nissan Skyline GT-R R34 Azul">
+        </div>
+    </section>
+
+    <section class="specs" id="specs">
+        <h2 class="title">Alta <span>Performance</span></h2>
+        <div class="specs-grid">
+            <div class="spec-box">
+                <div class="number">280 CV</div>
+                <div class="label">Potência</div>
+            </div>
+            <div class="spec-box">
+                <div class="number">2.6L</div>
+                <div class="label">RB26DETT Biturbo</div>
+            </div>
+            <div class="spec-box">
+                <div class="number">4.8s</div>
+                <div class="label">0 a 100 km/h</div>
+            </div>
+            <div class="spec-box">
+                <div class="number">AWD</div>
+                <div class="label">Tração Integral</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="fotos">
+        <h2 class="title">Galeria de <span>Imagens</span></h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Skyline R34 Frente">
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Esportivo em Movimento">
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Detalhe Esportivo">
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contato">
+        <div class="form-box">
+            <h2>Tenha a Lenda</h2>
+            <p>Cadastre-se para consultoria técnica de importação ou compra do Skyline R34.</p>
+            <form onsubmit="event.preventDefault(); alert('Solicitação enviada!');">
+                <div class="field">
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="field">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="field">
+                    <label>WhatsApp</label>
+                    <input type="tel" placeholder="(11) 99999-9999" required>
+                </div>
+                <div class="field">
+                    <label>Versão Desejada</label>
+                    <select>
+                        <option>GT-R V-Spec (Bayside Blue)</option>
+                        <option>GT-R V-Spec II</option>
+                        <option>GT-R M-Spec</option>
+                        <option>GT-R Nismo Z-Tune</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Solicitar Informações</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nissan Skyline GT-R R34 Landing Page.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+/* ==========================================================================
+   RESET E ESTILOS GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0a0e17;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Detalhe superior em Gradiente Neon */
+.top-line {
+    height: 4px;
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #00c6ff 100%);
+}
+
+/* ==========================================================================
+   CABEÇALHO / NAVBAR
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(10, 14, 23, 0.95);
+    border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #00f2fe;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+}
+
+nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00f2fe;
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (PRINCIPAL)
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+    min-height: 85vh;
+    background: radial-gradient(circle at 70% 50%, rgba(0, 242, 254, 0.12) 0%, rgba(10, 14, 23, 1) 70%);
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(0, 242, 254, 0.1);
+    border: 1px solid #00f2fe;
+    color: #00f2fe;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-text h1 span {
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #a0aec0;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 16px 36px;
+    background: linear-gradient(90deg, #00f2fe, #00c6ff);
+    color: #0a0e17;
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+}
+
+.hero-img {
+    width: 45%;
+}
+
+.hero-img img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+}
+
+/* ==========================================================================
+   ESPECIFICAÇÕES TÉCNICAS
+   ========================================================================== */
+.specs {
+    padding: 80px 8%;
+    background-color: #0e1422;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.title span {
+    color: #00f2fe;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.spec-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.spec-box:hover {
+    border-color: #00f2fe;
+    transform: translateY(-5px);
+    background: rgba(0, 242, 254, 0.05);
+}
+
+.number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #00f2fe;
+}
+
+.label {
+    font-size: 13px;
+    color: #a0aec0;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   GALERIA DE FOTOS
+   ========================================================================== */
+.gallery {
+    padding: 80px 8%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-card {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 250px;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   FORMULÁRIO DE CONTATO / LEAD
+   ========================================================================== */
+.contact {
+    padding: 80px 8%;
+    background: #0e1422;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    background: #0a0e17;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.form-box p {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #e2e8f0;
+}
+
+.field input, 
+.field select {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.field select option {
+    background-color: #0a0e17;
+    color: #ffffff;
+}
+
+.field input:focus, 
+.field select:focus {
+    border-color: #00f2fe;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #00f2fe, #00c6ff);
+    color: #0a0e17;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+@media (max-width: 850px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, 
+    .hero-img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-img {
+        margin-top: 40px;
+    }
+
+    header {
+        padding: 20px 5%;
+    }
+}
